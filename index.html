@@ -10,6 +10,7 @@
 <meta property="og:image" content="https://fairyflies9.github.io/img/duque.jpg">
 <meta property="og:url" content="https://fairyflies9.github.io/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231d2a44'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-size='30' text-anchor='middle' fill='%239fd3f5'%3ELM%3C/text%3E%3C/svg%3E">
+<link rel="canonical" href="https://fairyflies9.github.io/">
 <link rel="stylesheet" href="style.css">
 <script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);var q=new URLSearchParams(location.search),a=q.get('accent'),m=q.get('theme');if(a)document.documentElement.setAttribute('data-accent',a);if(m)document.documentElement.setAttribute('data-theme',m)}catch(e){}</script>
 </head>
@@ -17,9 +18,21 @@
 <a class="skip" href="#main">Skip to content</a>
 <header class="site-head"><div class="wrap">
   <a class="brand" href="index.html"><b>Laura Miller</b><span>Miller Lab · University of Arizona</span></a>
-  <nav class="main" aria-label="Main"><a href="index.html" aria-current="page">Home</a><a href="research.html">Research</a><a href="research.html#horses">Horses</a><a href="people.html">People</a><a href="publications.html">Publications</a><a href="teaching.html">Teaching &amp; Code</a><a href="cv/Laura_Miller_CV.pdf">CV</a></nav>
+  <nav class="main" aria-label="Main"><a href="index.html" aria-current="page">Home</a><a href="research.html">Research</a><a href="horses.html">Horses</a><a href="people.html">People</a><a href="publications.html">Publications</a><a href="teaching.html">Teaching &amp; Code</a><a href="cv/Laura_Miller_CV.pdf">CV</a></nav>
 </div></header>
 <main id="main">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Laura Miller",
+  "jobTitle": "Professor of Mathematics",
+  "affiliation": {"@type": "CollegeOrUniversity", "name": "University of Arizona"},
+  "url": "https://fairyflies9.github.io/",
+  "knowsAbout": ["Equine biomechanics", "Biological fluid dynamics", "Mathematical biology", "Immersed boundary method", "Jellyfish", "Insect flight"],
+  "sameAs": ["https://scholar.google.com/citations?user=zrKC-PcAAAAJ", "https://www.linkedin.com/in/laura-miller-equiphysics/", "https://github.com/fairyflies9", "https://profiles.arizona.edu/person/lauram9", "https://www.equiphysics.org"]
+}
+</script>
 <div class="hero">
   <div class="wrap grid">
     <div>
@@ -29,7 +42,7 @@
       <p>I build mathematical models of how animals move. Half of our lab works on fluids: how jellyfish, corals, and the smallest insects swim, feed, fly, and pump. The other half works on horses: gait, breathing, and heart rate, and how they fit together.</p>
       <div class="btns">
         <a class="btn solid" href="research.html">Our research</a>
-        <a class="btn ghost" href="research.html#horses">The horse work</a>
+        <a class="btn ghost" href="horses.html">The horse work</a>
         <a class="btn ghost" href="people.html">People</a>
       </div>
     </div>
@@ -46,7 +59,7 @@
   <p class="lead">Our group develops data-driven mathematical models of animal movement. We take measurements of real animals, build physical models and computer simulations, and use them to understand the forces animals feel and make.</p>
   <p style="margin-top:14px;max-width:760px">Everyone who likes an interdisciplinary approach is welcome here. Our lab includes mathematicians who have not studied biology since high school and biologists who have not studied math since Calculus I. We've also had chemists, physicists, engineers, and artists work with us.</p>
   <div class="cards">
-    <a class="card" href="research.html#horses"><img src="img/horse-barn.jpg" alt="A bay horse in the barn" style="object-position:center 30%"><div class="body"><div class="kicker">Horses</div><h3>Systems biomechanics</h3><p>How gait, breathing, and heart rate work together, and what movement data can tell us about soundness and fitness.</p><span class="more">Read more</span></div></a>
+    <a class="card" href="horses.html"><img src="img/horse-barn.jpg" alt="A bay horse in the barn" style="object-position:center 30%"><div class="body"><div class="kicker">Horses</div><h3>Systems biomechanics</h3><p>How gait, breathing, and heart rate work together, and what movement data can tell us about soundness and fitness.</p><span class="more">Read more</span></div></a>
     <a class="card" href="research.html#jellyfish"><img src="img/cassiopea-arms.jpg" alt="Cassiopea jellyfish with blue oral arms"><div class="body"><div class="kicker">Jellyfish and corals</div><h3>Swimming and feeding</h3><p>How upside-down jellyfish pump water through their oral arms, and how pulsing corals stir the water around them.</p><span class="more">Read more</span></div></a>
     <a class="card" href="research.html#insects"><img src="img/bristle-flow.jpg" alt="Simulated flow through a row of bristles"><div class="body"><div class="kicker">Small scales</div><h3>Tiny flyers and filters</h3><p>Bristled wings, leaky rakes, and the physics of flying when air feels thick.</p><span class="more">Read more</span></div></a>
     <a class="card" href="research.html#hearts"><img src="img/tube-heart.jpg" alt="Simulation of blood cells moving through a tubular heart"><div class="body"><div class="kicker">Hearts</div><h3>Pumps of every size</h3><p>From valveless embryonic heart tubes to the athletic heart and aorta of the horse.</p><span class="more">Read more</span></div></a>
@@ -62,7 +75,7 @@
       <p>I have worked with horses since I was eight, mostly in classical dressage, horse care, and running barns. Now the horses are my partners in the science too. We record gait with wearable motion sensors and heart rate with straps made for horses, and we build models that explain what we see.</p>
       <ul>
         <li><a href="https://www.equiphysics.org">EquiPhysics</a> is the nonprofit I founded, now based at Rancho del Nido in Sonoita, Arizona. We bring horse lovers to mathematics, and put mathematics to work for horses.</li>
-        <li>At the University of Arizona, students join us through the Horse and Math Innovation Lab, a summer REU, and a course-based research class.</li>
+        <li>The program began at the University of Arizona's Al-Marah Equine Center (AMEC) and moved to Rancho del Nido in 2026. <a href="horses.html">Read how it moved</a>.</li>
         <li>Teachers can use our free apps and lessons, built from our own horses' data.</li>
       </ul>
     </div>
