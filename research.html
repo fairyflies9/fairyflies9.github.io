@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Research | Laura Miller</title>
+<meta name="description" content="Research in the Miller Lab: systems biomechanics of the horse, jellyfish and coral fluid dynamics, flight and filtering in tiny insects, hearts and pumps, and flexible leaves.">
+<meta property="og:title" content="Research | Laura Miller">
+<meta property="og:description" content="Research in the Miller Lab: systems biomechanics of the horse, jellyfish and coral fluid dynamics, flight and filtering in tiny insects, hearts and pumps, and flexible leaves.">
+<meta property="og:image" content="https://fairyflies9.github.io/img/duque.jpg">
+<meta property="og:url" content="https://fairyflies9.github.io/research.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231d2a44'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-size='30' text-anchor='middle' fill='%239fd3f5'%3ELM%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+<script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);var q=new URLSearchParams(location.search),a=q.get('accent'),m=q.get('theme');if(a)document.documentElement.setAttribute('data-accent',a);if(m)document.documentElement.setAttribute('data-theme',m)}catch(e){}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head"><div class="wrap">
+  <a class="brand" href="index.html"><b>Laura Miller</b><span>Miller Lab · University of Arizona</span></a>
+  <nav class="main" aria-label="Main"><a href="index.html">Home</a><a href="research.html" aria-current="page">Research</a><a href="research.html#horses">Horses</a><a href="people.html">People</a><a href="publications.html">Publications</a><a href="teaching.html">Teaching &amp; Code</a><a href="cv/Laura_Miller_CV.pdf">CV</a></nav>
+</div></header>
+<main id="main">
+<div class="page-hero"><div class="wrap">
+  <div class="kicker hero-kicker">Research</div>
+  <h1>How animals move, pump, and feed</h1>
+  <p>We combine experiments, computation, and theory. Our main computational tool is the immersed boundary method, which lets us simulate flexible bodies moving through fluid. We measure real animals, build models, and check the models against the animals.</p>
+  <div class="jump"><a href="#horses">Horses</a><a href="#jellyfish">Jellyfish and corals</a><a href="#insects">Tiny flyers and filters</a><a href="#hearts">Hearts and pumps</a><a href="#leaves">Leaves</a></div>
+</div></div>
+
+<div class="wrap">
+  <article class="topic" id="horses">
+    <div>
+      <div class="kicker">Horses</div>
+      <h2>Systems biomechanics of the horse</h2>
+      <p>Horses are remarkable athletes. A fit horse's heart can idle near 30 beats a minute and race past 200. At the canter and gallop, each stride is tied to a breath. Systems biomechanics puts the pieces together: legs, lungs, heart, and the rider, and how they work as one animal.</p>
+      <p>We study how gait, breathing, and heart rate interact, look for movement asymmetries that can point to injury or training imbalances, and model blood flow in the horse's aorta. Our data come from wearable motion sensors, heart-rate straps made for horses, and high-speed video. The horses are partners and teachers in all of it. Our horse work began at the University of Arizona's Al-Marah Equine Center in Tucson. When the university announced the sale of Al-Marah in 2026, the horses and the program moved to Rancho del Nido in Sonoita, home of EquiPhysics.</p>
+      <ul>
+        <li>Gait asymmetry in off-the-track Thoroughbreds (OTTBs), measured with inertial sensors.</li>
+        <li>How heart rate and heart-rate variability track gait, effort, and recovery.</li>
+        <li>When blood flow in the equine aorta turns from smooth to turbulent.</li>
+        <li>How breathing locks to the stride, and how heart rate responds to music.</li>
+      </ul>
+      <div class="tags">
+        <a href="https://www.equiphysics.org">EquiPhysics</a>
+        <a href="https://equiphysics.github.io/web-apps/">Horse Gait Lab app</a>
+        <a href="https://equiphysics.github.io/web-apps/heart/">Horse Heart Lab app</a>
+        <a href="https://sites.google.com/view/systemsbiomechanics/home">Systems Biomechanics of the Horse symposium</a>
+        <a href="https://github.com/equiphysics/education">Open lessons and data</a>
+      </div>
+    </div>
+    <figure class="pics">
+      <img src="img/duque.jpg" alt="Duque, a bay horse, in the barn aisle" style="max-height:420px">
+      <div class="pair"><img src="img/app-gait.jpg" alt="Horse Gait Lab app"><img src="img/app-heart.jpg" alt="Horse Heart Lab app showing an ECG"></div>
+      <figcaption>Duque, and two of the free apps built from his data.</figcaption>
+    </figure>
+  </article>
+
+  <article class="topic flip" id="jellyfish">
+    <div>
+      <div class="kicker">Jellyfish and corals</div>
+      <h2>Swimming, feeding, and stirring</h2>
+      <p>Upside-down jellyfish (<i>Cassiopea</i>) rest on the sea floor and pulse their bells. Each pulse pulls water toward the frilly oral arms, where plankton is caught, and pushes it up and away. Because the bell presses against the sand, the flow is not like a swimming jellyfish's: new water comes in with every pulse.</p>
+      <p>We study how the oral arms filter like a porous layer, how mucus and stinging cells help with feeding and defense, and how bell shape, muscle, and resonance make swimming efficient. We also study soft corals that pulse to stir the water around them, and the fast firing of stinging capsules.</p>
+      <div class="tags">
+        <span>NSF IOS: Measuring and Understanding the <i>Cassiopea</i> Use of Space</span>
+        <a href="https://doi.org/10.1073/pnas.2020025118">Neuromechanical wave resonance in jellyfish swimming (PNAS 2021)</a>
+        <a href="https://doi.org/10.1007/s11538-025-01493-3">Pulsing xeniid corals (2025)</a>
+        <a href="https://doi.org/10.1007/s11538-025-01474-6">Fast-firing extrusomes (2025)</a>
+      </div>
+    </div>
+    <figure class="pics">
+      <img src="img/cassiopea.jpg" alt="Upside-down jellyfish on the sand">
+      <div class="pair"><img src="img/jelly-sim.jpg" alt="Frames from a simulation of a swimming jellyfish"><img src="img/coral.jpg" alt="A pulsing soft coral"></div>
+      <figcaption>Upside-down jellyfish, a simulated swimmer, and a pulsing soft coral.</figcaption>
+    </figure>
+  </article>
+
+  <article class="topic" id="insects">
+    <div>
+      <div class="kicker">Small scales</div>
+      <h2>Tiny flyers and leaky filters</h2>
+      <p>The smallest flying insects, like thrips and fairyflies, are about a millimeter long or smaller, and their wings are mostly bristles. At that size air feels thick. We showed that flapping flight changes below a Reynolds number of about 40: lift drops and drag climbs. Many tiny insects clap their wings together and fling them apart for extra lift, and the bristles cut the large force needed to fling.</p>
+      <p>The same physics shows up in bristled legs, antennae, and feeding filters. Depending on size and speed, a row of hairs can act like a solid plate or like a leaky rake. We are working out where that switch happens and what it means for catching particles.</p>
+      <div class="tags">
+        <span>NSF DMS: Fluid dynamics of organisms filtering particles at the mesoscale</span>
+        <a href="https://doi.org/10.1242/jeb.143362">Bristles reduce the force to fling (JEB 2016)</a>
+        <a href="https://doi.org/10.1242/jeb.01376">Clap and fling (JEB 2005)</a>
+      </div>
+    </div>
+    <figure class="pics">
+      <img src="img/thrips.jpg" alt="A thrips with bristled wings" style="max-height:360px">
+      <div class="pair"><img src="img/wing-vortex.jpg" alt="Vortices shed by a simulated flapping wing"><img src="img/bristle-flow.jpg" alt="Simulated flow through bristles"></div>
+      <figcaption>A thrips, the wake of a flapping wing, and flow through a bristled array.</figcaption>
+    </figure>
+  </article>
+
+  <article class="topic flip" id="hearts">
+    <div>
+      <div class="kicker">Hearts and pumps</div>
+      <h2>From heart tubes to racehorses</h2>
+      <p>Every vertebrate heart starts as a simple tube with no valves. As it grows, the flow inside changes from smooth and syrupy to swirling, and those changes may help shape the chambers. We build physical models and simulations of embryonic hearts, valveless tubular hearts, and the small vessels of the lymphatic system.</p>
+      <p>Now we are looking at the other extreme: the athletic heart and aorta of the horse, where flow speeds up enough to turn turbulent.</p>
+      <div class="tags">
+        <a href="https://doi.org/10.1098/rsif.2020.0232">Uncertainty in valveless pumping (2020)</a>
+        <a href="https://doi.org/10.3390/jcdd6010006">Trabeculated embryonic ventricles (2019)</a>
+        <a href="https://doi.org/10.3389/fcvm.2022.840305">Lymphatic capillaries and Murray's law (2022)</a>
+      </div>
+    </div>
+    <figure class="pics">
+      <img src="img/tube-heart.jpg" alt="Simulation of blood cells in a tubular heart" style="max-height:380px">
+      <img src="img/heart-models.jpg" alt="Physical models of the embryonic heart with dye">
+      <figcaption>Blood cells in a simulated heart tube, and physical models of the embryonic heart.</figcaption>
+    </figure>
+  </article>
+
+  <article class="topic" id="leaves">
+    <div>
+      <div class="kicker">Plants</div>
+      <h2>Leaves in wind and water</h2>
+      <p>In strong winds, broad leaves roll up into cones that flutter less and feel less drag than a flat sheet would. We use simulations and flow visualization to see how flexible leaves, stems, and aquatic plants reconfigure in wind and waves, and how plants shelter the plankton that live among them.</p>
+      <div class="tags">
+        <a href="https://doi.org/10.1242/jeb.064501">Broad leaves in strong winds (JEB 2012)</a>
+        <span>NSF DMS: The physical biology of leaves in wind and waves</span>
+      </div>
+    </div>
+    <figure class="pics">
+      <img src="img/leaves.jpg" alt="Broad leaves">
+    </figure>
+  </article>
+
+  <p class="note">Most of this work is open. Our code, including IB2d, IBAMR examples, and Planktos, is on the <a href="teaching.html#code">teaching and code</a> page. The full list of papers is on the <a href="publications.html">publications</a> page.</p>
+</div>
+
+</main>
+<footer><div class="wrap">
+  <div>
+    <b>Laura Miller</b>
+    Department of Mathematics, University of Arizona<br>
+    617 N. Santa Rita Ave., P.O. Box 210089, <span class="nowrap">Tucson, AZ 85721-0089</span><br>
+    <a href="mailto:lauram9@arizona.edu">lauram9@arizona.edu</a>
+    <div class="small">Horses, lessons, and EquiPhysics events: <a href="mailto:laura_miller@equiphysics.org">laura_miller@equiphysics.org</a></div>
+  </div>
+  <div>
+    <b>Elsewhere</b>
+    <ul>
+      <li><a href="https://scholar.google.com/citations?user=zrKC-PcAAAAJ&amp;hl=en">Google Scholar</a></li>
+      <li><a href="https://github.com/fairyflies9">GitHub</a></li>
+      <li><a href="https://www.linkedin.com/in/laura-miller-107a1055/">LinkedIn</a></li>
+      <li><a href="cv/Laura_Miller_CV.pdf">CV (PDF)</a></li>
+    </ul>
+  </div>
+  <div>
+    <b>Horses</b>
+    <ul>
+      <li><a href="https://www.equiphysics.org">EquiPhysics</a></li>
+      <li><a href="https://equiphysics.github.io/">Free tools and lessons</a></li>
+      <li><a href="https://equiphysics.github.io/web-apps/">Horse Gait Lab</a> · <a href="https://equiphysics.github.io/web-apps/heart/">Horse Heart Lab</a></li>
+    </ul>
+    <div class="small">Updated October 2026.</div>
+    <button class="theme-btn" type="button" id="themeBtn">Light / dark</button>
+  </div>
+</div></footer>
+<script>
+(function(){var b=document.getElementById('themeBtn');if(!b)return;b.addEventListener('click',function(){
+var r=document.documentElement,cur=r.getAttribute('data-theme');
+if(!cur){cur=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}
+var next=cur==='dark'?'light':'dark';r.setAttribute('data-theme',next);try{localStorage.setItem('theme',next)}catch(e){}});})();
+</script>
+</body>
+</html>
