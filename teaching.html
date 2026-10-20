@@ -3,13 +3,20 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Teaching and Code | Laura Miller</title>
-<meta name="description" content="Courses, student research programs, free horse-science apps and lessons, and open-source code from the Miller Lab.">
-<meta property="og:title" content="Teaching and Code | Laura Miller">
-<meta property="og:description" content="Courses, student research programs, free horse-science apps and lessons, and open-source code from the Miller Lab.">
-<meta property="og:image" content="https://fairyflies9.github.io/img/duque.jpg">
+<title>Teaching and Code | Laura Miller, Mathematical Biologist</title>
+<meta name="description" content="University of Arizona courses and student research with Laura Miller, free horse-science apps, and immersed boundary tutorials and code (IB2d, IBAMR).">
+<meta property="og:title" content="Teaching and Code | Laura Miller, Mathematical Biologist">
+<meta property="og:description" content="University of Arizona courses and student research with Laura Miller, free horse-science apps, and immersed boundary tutorials and code (IB2d, IBAMR).">
+<meta property="og:image" content="https://fairyflies9.github.io/img/share.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Laura Miller, mathematical biologist, University of Arizona. Photos of Duque, a bay horse, an upside-down jellyfish, and a thrips.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Laura Miller, Mathematical Biologist">
+<meta name="twitter:card" content="summary_large_image">
 <meta property="og:url" content="https://fairyflies9.github.io/teaching.html">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231d2a44'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-size='30' text-anchor='middle' fill='%239fd3f5'%3ELM%3C/text%3E%3C/svg%3E">
+<link rel="canonical" href="https://fairyflies9.github.io/teaching.html">
 <link rel="stylesheet" href="style.css">
 <script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);var q=new URLSearchParams(location.search),a=q.get('accent'),m=q.get('theme');if(a)document.documentElement.setAttribute('data-accent',a);if(m)document.documentElement.setAttribute('data-theme',m)}catch(e){}</script>
 </head>
@@ -17,7 +24,7 @@
 <a class="skip" href="#main">Skip to content</a>
 <header class="site-head"><div class="wrap">
   <a class="brand" href="index.html"><b>Laura Miller</b><span>Miller Lab · University of Arizona</span></a>
-  <nav class="main" aria-label="Main"><a href="index.html">Home</a><a href="research.html">Research</a><a href="research.html#horses">Horses</a><a href="people.html">People</a><a href="publications.html">Publications</a><a href="teaching.html" aria-current="page">Teaching &amp; Code</a><a href="cv/Laura_Miller_CV.pdf">CV</a></nav>
+  <nav class="main" aria-label="Main"><a href="index.html">Home</a><a href="research.html">Research</a><a href="horses.html">Horses</a><a href="people.html">People</a><a href="publications.html">Publications</a><a href="teaching.html" aria-current="page">Teaching &amp; Code</a><a href="cv/Laura_Miller_CV.pdf">CV</a></nav>
 </div></header>
 <main id="main">
 <div class="page-hero"><div class="wrap">
@@ -43,7 +50,7 @@
     <div class="box">
       <h3>Research with students</h3>
       <ul>
-        <li><b>Horse and Math Innovation Lab.</b> A Vertically Integrated Project where students from many majors work together for several semesters on horse movement and physiology.</li>
+        <li><b>Horse Science &amp; Innovation Lab.</b> A Vertically Integrated Project where students from many majors work together for several semesters on horse movement and physiology.</li>
         <li><b>Course-based research in equine biomechanics.</b> A class where every student does original research: collecting data, analyzing it, and building models.</li>
         <li><b>Summer REU.</b> Our Research Training Group in Data Driven Discovery, with support from the Provost Investment Fund, runs a summer program that pairs mathematics and data science with equine science.</li>
         <li><b>Independent study.</b> MATH 199 to 499, at any level.</li>
@@ -75,7 +82,7 @@
   <h2>Code</h2>
   <p class="lead">Most of our simulations use the immersed boundary method, first developed by Charles Peskin. For flows at very small scales, where viscosity wins, we also use regularized Stokeslets. These are the tools we use and share.</p>
   <div class="cards">
-    <div class="card"><img src="img/fluidlets-swimmer.jpg" alt="Simulation of a green two-flagellum alga with tracer particles swept by its flagella" style="object-position:center"><div class="body"><div class="kicker">Python</div><h3>Fluidlets</h3><p>Regularized Stokeslets for cells, cilia, and swimmers, with walls, IB2d-style input files, ParaView output, worked examples, and tutorials. The software goal of our NSF FRG with Michael Minion, Jan Prins, and Jingfang Huang.</p><a class="more" href="https://github.com/fairyflies9/fluidlets">github.com/fairyflies9/fluidlets</a></div></div>
+    <div class="card"><img src="img/fluidlets-swimmer.jpg" alt="Simulation of a green two-flagellum alga with tracer particles swept by its flagella" style="object-position:center"><div class="body"><div class="kicker">Python</div><h3>Fluidlets</h3><p>Regularized Stokeslets and Brinkmanlets for cells, cilia, and swimmers, with walls, IB2d-style input files, ParaView output, worked examples, and tutorials. The software goal of our NSF FRG with Michael Minion, Jan Prins, and Jingfang Huang.</p><a class="more" href="fluidlets.html">About Fluidlets</a><a class="more" href="https://github.com/fairyflies9/fluidlets" style="padding-top:0">github.com/fairyflies9/fluidlets</a></div></div>
     <div class="card"><div class="body"><div class="kicker">MATLAB and Python</div><h3>IB2d</h3><p>An easy-to-use immersed boundary code in 2D with dozens of examples: springs, beams, muscles, porous structures, and advection-diffusion. Led by Nick Battista.</p><a class="more" href="https://github.com/nickabattista/IB2d">github.com/nickabattista/IB2d</a></div></div>
     <div class="card"><div class="body"><div class="kicker">C++, parallel</div><h3>IBAMR</h3><p>Boyce Griffith's adaptive, parallel immersed boundary library for 3D problems. We share our tutorials, slides, and example models.</p><a class="more" href="https://github.com/fairyflies9/Using-IB-Software">Using IB Software tutorials</a><a class="more" href="https://github.com/IBAMR/IBAMR" style="padding-top:0">IBAMR on GitHub</a></div></div>
     <div class="card"><div class="body"><div class="kicker">Python</div><h3>Planktos</h3><p>An agent-based framework for moving plankton and other small organisms through simulated flows, developed with Christopher Strickland.</p><a class="more" href="https://github.com/mountaindust/Planktos">Planktos on GitHub</a></div></div>
@@ -112,6 +119,7 @@
     <b>Elsewhere</b>
     <ul>
       <li><a href="https://scholar.google.com/citations?user=zrKC-PcAAAAJ&amp;hl=en">Google Scholar</a></li>
+      <li><a href="https://orcid.org/0000-0003-3707-9798">ORCID</a></li>
       <li><a href="https://github.com/fairyflies9">GitHub</a></li>
       <li><a href="https://www.linkedin.com/in/laura-miller-equiphysics/">LinkedIn</a></li>
       <li><a href="cv/Laura_Miller_CV.pdf">CV (PDF)</a></li>
@@ -120,6 +128,7 @@
   <div>
     <b>Horses</b>
     <ul>
+      <li><a href="horses.html">From AMEC to Rancho del Nido</a></li>
       <li><a href="https://www.equiphysics.org">EquiPhysics</a></li>
       <li><a href="https://equiphysics.github.io/">Free tools and lessons</a></li>
       <li><a href="https://equiphysics.github.io/web-apps/">Horse Gait Lab</a> · <a href="https://equiphysics.github.io/web-apps/heart/">Horse Heart Lab</a></li>

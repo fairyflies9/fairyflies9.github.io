@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fluidlets | Laura Miller, Mathematical Biologist</title>
+<meta name="description" content="Fluidlets, open-source Python code for regularized Stokeslets and Brinkmanlets: flows at very small scales, from cilia and swimming cells to porous media, with worked examples and tutorials.">
+<meta property="og:title" content="Fluidlets | Laura Miller, Mathematical Biologist">
+<meta property="og:description" content="Fluidlets, open-source Python code for regularized Stokeslets and Brinkmanlets: flows at very small scales, from cilia and swimming cells to porous media, with worked examples and tutorials.">
+<meta property="og:image" content="https://fairyflies9.github.io/img/share.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Laura Miller, mathematical biologist, University of Arizona. Photos of Duque, a bay horse, an upside-down jellyfish, and a thrips.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Laura Miller, Mathematical Biologist">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:url" content="https://fairyflies9.github.io/fluidlets.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231d2a44'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-size='30' text-anchor='middle' fill='%239fd3f5'%3ELM%3C/text%3E%3C/svg%3E">
+<link rel="canonical" href="https://fairyflies9.github.io/fluidlets.html">
+<link rel="stylesheet" href="style.css">
+<script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);var q=new URLSearchParams(location.search),a=q.get('accent'),m=q.get('theme');if(a)document.documentElement.setAttribute('data-accent',a);if(m)document.documentElement.setAttribute('data-theme',m)}catch(e){}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head"><div class="wrap">
+  <a class="brand" href="index.html"><b>Laura Miller</b><span>Miller Lab · University of Arizona</span></a>
+  <nav class="main" aria-label="Main"><a href="index.html">Home</a><a href="research.html">Research</a><a href="horses.html">Horses</a><a href="people.html">People</a><a href="publications.html">Publications</a><a href="teaching.html" aria-current="page">Teaching &amp; Code</a><a href="cv/Laura_Miller_CV.pdf">CV</a></nav>
+</div></header>
+<main id="main">
+<div class="page-hero"><div class="wrap">
+  <div class="kicker hero-kicker">Open-source code</div>
+  <h1>Fluidlets</h1>
+  <p>Python code for flows at very small scales, where viscosity wins: beating cilia, protein brushes on cells, swimming algae, and flow through porous material. It is written to be read and taught from, in the spirit of IB2d.</p>
+  <div class="btns">
+    <a class="btn solid" href="https://github.com/fairyflies9/fluidlets">Get the code on GitHub</a>
+    <a class="btn line" href="https://github.com/fairyflies9/fluidlets/tree/main/tutorials">Tutorials</a>
+  </div>
+</div></div>
+
+<section><div class="wrap">
+  <div class="two">
+    <div class="box">
+      <h3>The idea</h3>
+      <p>For a cell or a cilium, swimming in water is like a person swimming in honey while moving no faster than a few centimetres a minute: the moment it stops pushing, it stops. Inertia does not matter, so the flow obeys the Stokes equations, which are linear: the flow made by many small forces is the sum of the flows made by each one.</p>
+      <p>A <b>regularized Stokeslet</b> is the flow made by one small force, smoothed over a tiny blob so that nothing blows up. Fluidlets puts these forces on the surface of a body, solves for the forces that make the body move the way it should, and adds up their flows. There is no mesh of the fluid, so complicated, moving shapes are easy to set up.</p>
+    </div>
+    <div class="box">
+      <h3>What it does now</h3>
+      <ul>
+        <li><b>3D regularized Stokeslets</b> (Cortez, Fauci &amp; Medovikov 2005), with the exact image system for a no-slip wall (Ainley et al. 2008).</li>
+        <li><b>3D regularized Brinkmanlets</b> for flow through a sparse porous medium (Cortez, Cummins, Leiderman &amp; Varela 2010).</li>
+        <li><b>Resistance problems:</b> set the velocity of a structure, and Fluidlets solves for the forces.</li>
+        <li><b>Free swimming:</b> a cell that moves by changing its shape, with zero net force and torque (after Gallagher &amp; Smith 2018).</li>
+        <li><b>Fast, parallel sums</b> with Numba.</li>
+        <li><b>IB2d-style input files</b>, and output you can open in ParaView or VisIt.</li>
+      </ul>
+    </div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Examples</h2>
+  <p class="lead">Each example runs with one command and explains the physics in plain language. Each one is checked against a published result or against the code Fluidlets grew from.</p>
+
+  <article class="topic">
+    <div>
+      <div class="kicker">Free swimming</div>
+      <h2>A model alga with two flagella</h2>
+      <p>The cell beats its two flagella, and Fluidlets works out how it must move so that the total force and torque on it are zero. The result matches the swimming speed in Gallagher &amp; Smith (2018) once the flagellum is built the same way as in the authors' own code. Tracer particles in the movie show how the flagella sweep the water.</p>
+      <div class="tags"><a href="https://github.com/fairyflies9/fluidlets/tree/main/examples/biflagellate_swimmer">biflagellate_swimmer</a></div>
+    </div>
+    <figure class="pics">
+      <img src="img/fluidlets-swimmer.jpg" alt="Simulation of a green two-flagellum alga with tracer particles swept by its flagella">
+      <figcaption>A model alga swimming with two flagella. Tracer particles show the flow.</figcaption>
+    </figure>
+  </article>
+
+  <article class="topic flip">
+    <div>
+      <div class="kicker">Walls</div>
+      <h2>A sphere moving along a wall</h2>
+      <p>Cells often swim, crawl, or roll near surfaces. A wall changes the flow a lot: fluid cannot slip along it, so it holds back the fluid under the body and raises the drag. Fluidlets builds the no-slip wall into the flow of each force with an exact image system, so no points are needed on the wall. The drag matches the tables of Ainley et al. (2008).</p>
+      <div class="tags"><a href="https://github.com/fairyflies9/fluidlets/tree/main/examples/sphere_near_wall">sphere_near_wall</a></div>
+    </div>
+    <figure class="pics">
+      <img src="img/fluidlets-wall.jpg" alt="Flow around a sphere moving to the right, far from a wall and just above a wall, with streamlines">
+      <figcaption>A sphere moving to the right, with no wall (top) and with a no-slip wall below it (bottom). The wall slows the fluid underneath and raises the drag by about half.</figcaption>
+    </figure>
+  </article>
+
+  <article class="topic">
+    <div>
+      <div class="kicker">Porous media</div>
+      <h2>A sphere in a porous medium</h2>
+      <p>Much of the fluid in and around cells is threaded with fibers: mucus, biofilms, the glycocalyx on blood vessel walls. Averaged over the fibers, this is a Brinkman medium. The mesh screens the flow, so a moving body disturbs only the fluid close to it, and the fluid to its sides flows backward. Drag, torque, and flow agree with Cortez, Cummins, Leiderman &amp; Varela (2010) to within a few percent.</p>
+      <div class="tags"><a href="https://github.com/fairyflies9/fluidlets/tree/main/examples/sphere_in_brinkman">sphere_in_brinkman</a></div>
+    </div>
+    <figure class="pics">
+      <img src="img/fluidlets-brinkman.jpg" alt="Flow around a sphere in plain fluid and in two porous media, showing the flow confined closer to the sphere as the screening length shrinks">
+      <figcaption>The same sphere in plain fluid and in two porous media. As the screening length shrinks, the flow stays closer to the sphere, with backward flow to its sides.</figcaption>
+    </figure>
+  </article>
+
+  <div class="cards">
+    <div class="card"><div class="body"><div class="kicker">Glycocalyx</div><h3>Towers in shear flow</h3><p>Protein towers standing on a wall in a shear flow. This reproduces the original UNC code that Fluidlets grew from, to about one part in ten million (the old code's rounding).</p><a class="more" href="https://github.com/fairyflies9/fluidlets/tree/main/examples/glycocalyx_towers">glycocalyx_towers</a></div></div>
+    <div class="card"><div class="body"><div class="kicker">Classic test</div><h3>A translating sphere</h3><p>Drag and torque on a sphere, the standard check of any regularized Stokeslet code, against Cortez, Fauci &amp; Medovikov (2005).</p><a class="more" href="https://github.com/fairyflies9/fluidlets/tree/main/examples/translating_sphere">translating_sphere</a></div></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Tutorials</h2>
+  <p class="lead">Jupyter notebooks that teach the method step by step, with the math next to the code. Each one ends with exercises, runs in under a minute on a laptop, and can also be opened on Colab.</p>
+  <div class="cards">
+    <div class="card"><div class="body"><div class="kicker">01</div><h3>From blob to regularized Stokeslet</h3><p>Derive the regularized Stokeslet from the blob and compare it with the singular one.</p><a class="more" href="https://github.com/fairyflies9/fluidlets/blob/main/tutorials/01_blob_to_stokeslet.ipynb">Open the notebook</a></div></div>
+    <div class="card"><div class="body"><div class="kicker">02</div><h3>Choosing &epsilon;</h3><p>How big the blob should be, and how its error trades off against the spacing of the points.</p><a class="more" href="https://github.com/fairyflies9/fluidlets/blob/main/tutorials/02_choosing_eps.ipynb">Open the notebook</a></div></div>
+    <div class="card"><div class="body"><div class="kicker">03</div><h3>Mobility, resistance, and swimming</h3><p>Forces in, velocities out, and the reverse; walls; and a cell that swims by changing its shape.</p><a class="more" href="https://github.com/fairyflies9/fluidlets/blob/main/tutorials/03_mobility_resistance_swimming.ipynb">Open the notebook</a></div></div>
+    <div class="card"><div class="body"><div class="kicker">05</div><h3>Porous media with Brinkmanlets</h3><p>Screening, backflow, and the drag on a sphere in a porous medium.</p><a class="more" href="https://github.com/fairyflies9/fluidlets/blob/main/tutorials/05_porous_media_brinkmanlets.ipynb">Open the notebook</a></div></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="two">
+    <div class="box">
+      <h3>Where it came from</h3>
+      <p>Fluidlets was the software goal of the NSF Focused Research Group <i>Advanced Algorithms and Software for Problems in Computational Bio-Fluid Dynamics</i> (DMS-0854961, 2009&ndash;2013) at UNC Chapel Hill, with Michael Minion, Jan Prins, and Jingfang Huang. It starts from the regularized Stokeslet code written for the group's glycocalyx project. That code is kept unchanged alongside the new one, and the new code was checked against it.</p>
+    </div>
+    <div class="box">
+      <h3>Coming next</h3>
+      <ul>
+        <li>2D Stokeslets and Brinkmanlets, and Brinkmanlets near a wall.</li>
+        <li>Oseenlets, for flows with a little inertia.</li>
+        <li>Electrostatics coupled to flow, such as charged pollen landing on flowers.</li>
+        <li>Vortex sheets for flapping and flexible plates.</li>
+        <li>Viscoelastic and shear-thinning fluids.</li>
+        <li>More tutorials and course modules.</li>
+      </ul>
+    </div>
+  </div>
+  <p class="note">Fluidlets needs Python 3.10 or later, NumPy, SciPy, and Numba. Clone the repository and run <code>pip install -e .</code> to install it. Developed by Laura A. Miller and collaborators. BSD 3-Clause License.</p>
+</div></section>
+
+</main>
+<footer><div class="wrap">
+  <div>
+    <b>Laura Miller</b>
+    Department of Mathematics, University of Arizona<br>
+    617 N. Santa Rita Ave., P.O. Box 210089, <span class="nowrap">Tucson, AZ 85721-0089</span><br>
+    <a href="mailto:lauram9@arizona.edu">lauram9@arizona.edu</a>
+    <div class="small">Horses, lessons, and EquiPhysics events: <a href="mailto:laura_miller@equiphysics.org">laura_miller@equiphysics.org</a></div>
+  </div>
+  <div>
+    <b>Elsewhere</b>
+    <ul>
+      <li><a href="https://scholar.google.com/citations?user=zrKC-PcAAAAJ&amp;hl=en">Google Scholar</a></li>
+      <li><a href="https://orcid.org/0000-0003-3707-9798">ORCID</a></li>
+      <li><a href="https://github.com/fairyflies9">GitHub</a></li>
+      <li><a href="https://www.linkedin.com/in/laura-miller-equiphysics/">LinkedIn</a></li>
+      <li><a href="cv/Laura_Miller_CV.pdf">CV (PDF)</a></li>
+    </ul>
+  </div>
+  <div>
+    <b>Horses</b>
+    <ul>
+      <li><a href="horses.html">From AMEC to Rancho del Nido</a></li>
+      <li><a href="https://www.equiphysics.org">EquiPhysics</a></li>
+      <li><a href="https://equiphysics.github.io/">Free tools and lessons</a></li>
+      <li><a href="https://equiphysics.github.io/web-apps/">Horse Gait Lab</a> · <a href="https://equiphysics.github.io/web-apps/heart/">Horse Heart Lab</a></li>
+    </ul>
+    <div class="small">Updated October 2026.</div>
+    <button class="theme-btn" type="button" id="themeBtn">Light / dark</button>
+  </div>
+</div></footer>
+<script>
+(function(){var b=document.getElementById('themeBtn');if(!b)return;b.addEventListener('click',function(){
+var r=document.documentElement,cur=r.getAttribute('data-theme');
+if(!cur){cur=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}
+var next=cur==='dark'?'light':'dark';r.setAttribute('data-theme',next);try{localStorage.setItem('theme',next)}catch(e){}});})();
+</script>
+</body>
+</html>
