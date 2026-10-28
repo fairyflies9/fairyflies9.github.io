@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>pyIBM | Laura Miller, Mathematical Biologist</title>
+<meta name="description" content="pyIBM, open-source Python code for the immersed boundary method in two dimensions: flexible and moving structures in a viscous fluid, with IB2d-style input files, sixteen worked examples, and three tutorials.">
+<meta property="og:title" content="pyIBM | Laura Miller, Mathematical Biologist">
+<meta property="og:description" content="pyIBM, open-source Python code for the immersed boundary method in two dimensions: flexible and moving structures in a viscous fluid, with IB2d-style input files, sixteen worked examples, and three tutorials.">
+<meta property="og:image" content="https://fairyflies9.github.io/img/share.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Laura Miller, mathematical biologist, University of Arizona. Photos of Duque, a bay horse, an upside-down jellyfish, and a thrips.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Laura Miller, Mathematical Biologist">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:url" content="https://fairyflies9.github.io/pyibm.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231d2a44'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-size='30' text-anchor='middle' fill='%239fd3f5'%3ELM%3C/text%3E%3C/svg%3E">
+<link rel="canonical" href="https://fairyflies9.github.io/pyibm.html">
+<link rel="stylesheet" href="style.css">
+<script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);var q=new URLSearchParams(location.search),a=q.get('accent'),m=q.get('theme');if(a)document.documentElement.setAttribute('data-accent',a);if(m)document.documentElement.setAttribute('data-theme',m)}catch(e){}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head"><div class="wrap">
+  <a class="brand" href="index.html"><b>Laura Miller</b><span>Miller Lab · University of Arizona</span></a>
+  <nav class="main" aria-label="Main"><a href="index.html">Home</a><a href="research.html">Research</a><a href="horses.html">Horses</a><a href="people.html">People</a><a href="publications.html">Publications</a><a href="teaching.html" aria-current="page">Teaching &amp; Code</a><a href="cv/Laura_Miller_CV.pdf">CV</a></nav>
+</div></header>
+<main id="main">
+<div class="page-hero"><div class="wrap">
+  <div class="kicker hero-kicker">Open-source code</div>
+  <h1>pyIBM</h1>
+  <p>Python code for the immersed boundary method in two dimensions: flexible and moving structures in a viscous fluid, such as insect wings, flags, jellyfish bells, and heart tubes. It is written from the equations in the papers, and its input files follow IB2d.</p>
+  <div class="btns">
+    <a class="btn solid" href="https://github.com/fairyflies9/pyIBM">Get the code on GitHub</a>
+    <a class="btn line" href="https://github.com/fairyflies9/pyIBM/tree/main/tutorials">Tutorials</a>
+  </div>
+</div></div>
+
+<section><div class="wrap">
+  <div class="two">
+    <div class="box">
+      <h3>The idea</h3>
+      <p>Charles Peskin developed the immersed boundary method in the 1970s to study the flow around heart valves. The structure is a set of points joined by springs and beams, and the fluid lives on a fixed square grid. At every step the points push on the fluid around them, the fluid moves, and the points move with the fluid. The grid never has to follow the body, so wings that clap, bells that squeeze, and tubes that pinch are easy to set up.</p>
+      <p>pyIBM is that method in plain Python. Every module names the equations it implements, so you can read the code next to the papers. It grew out of my 2008 MATLAB code, and it still reproduces that code to round-off.</p>
+    </div>
+    <div class="box">
+      <h3>What it does now</h3>
+      <ul>
+        <li><b>Two fluid solvers:</b> a doubly periodic FFT solver with the first-order scheme of Peskin &amp; McQueen (1996) and the second-order midpoint scheme of Peskin (2002), and a projection solver on a staggered grid after Seibold (2008), with walls, moving walls, inflow, outflow, and periodic sides.</li>
+        <li><b>Two ways to join structure and fluid:</b> discrete delta functions, and the blob projection method of Cortez &amp; Minion (2000), which keeps the area inside a closed membrane.</li>
+        <li><b>Structures:</b> springs, damped springs, beams, target points for prescribed motion, and mass points that feel gravity.</li>
+        <li><b>IB2d-style input files</b>, so cases can move between the two codes, and hooks in plain Python for prescribed motion and boundary data.</li>
+        <li><b>Output</b> you can open in ParaView or VisIt, a history of the forces, and pictures of the vorticity.</li>
+        <li><b>Only NumPy, SciPy, and Matplotlib</b>, with tests for every example.</li>
+      </ul>
+    </div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Examples</h2>
+  <p class="lead">Each example runs with one command and has a README with the physics, the parameters, and the numbers to expect next to its reference. Some reproduce their reference closely, some only in part, and a few are demonstrations. Each one says which.</p>
+  <div class="cards">
+    <div class="card"><img src="img/pyibm-cylinder.jpg" alt="pyIBM simulation of the vortex street behind a circular cylinder at Reynolds number 100" style="object-fit:contain;background:#0b0f17"><div class="body"><div class="kicker">Vortex street</div><h3>Flow past a cylinder</h3><p>A ring of target points in a stream at Reynolds numbers 100 and 200, against Lai &amp; Peskin (2000). The shedding frequency, drag, and lift come out 7 to 9&nbsp;% above theirs. About half of that comes from our narrower box, and it is not yet a converged reproduction.</p><a class="more" href="https://github.com/fairyflies9/pyIBM/tree/main/examples/cylinder_wake">cylinder_wake</a></div></div>
+    <div class="card"><img src="img/pyibm-clap.jpg" alt="Two rigid wings flinging apart in pyIBM, with the vortices they shed, early in the fling (top) and at the end (bottom)" style="object-fit:contain;background:#0b0f17"><div class="body"><div class="kicker">Tiny insects</div><h3>Clap and fling</h3><p>Two wings fling apart at Reynolds numbers 8 and 128, the case of Miller &amp; Peskin (2005). The force peaks and troughs fall within 0.03 of the stroke of where the paper has them. At Re 128 the peaks during rotation are 36 to 42&nbsp;% high, because our wings start 4.3 grid cells apart instead of 10.</p><a class="more" href="https://github.com/fairyflies9/pyIBM/tree/main/examples/clap_and_fling">clap_and_fling</a></div></div>
+    <div class="card"><img src="img/pyibm-plate.jpg" alt="Vorticity around a rigid plate hovering with a tilted stroke, at mid-downstroke and mid-upstroke" style="object-fit:contain;background:#0b0f17"><div class="body"><div class="kicker">Hovering</div><h3>A flapping plate at Re 64</h3><p>A rigid plate hovering with the tilted stroke of Jones et al. (2015), which makes vertical force with drag on the downstroke and lift on the upstroke. The mean vertical force coefficient is 1.05 with walls and 1.09 in a periodic box, against 1.02 &plusmn; 0.03 from the paper, interpolated to Re 64.</p><a class="more" href="https://github.com/fairyflies9/pyIBM/tree/main/examples/flapping_plate_re64">flapping_plate_re64</a></div></div>
+    <div class="card"><img src="img/pyibm-blob.jpg" alt="A dented elastic ellipse ringing toward a circle, with the vorticity around it at two times" style="object-fit:contain;background:#0b0f17"><div class="body"><div class="kicker">Blob projection</div><h3>A ringing ellipse</h3><p>A dented elastic ellipse pulls itself toward a circle and rings, the test of Cortez &amp; Minion (2000). The fluid inside cannot be compressed, so the area should not change. With the blob projection it changes by a few parts in a million, inside the paper's range of &plusmn;1 part in 100,000. With the delta function it shrinks by 0.7&nbsp;%.</p><a class="more" href="https://github.com/fairyflies9/pyIBM/tree/main/examples/blob_ellipse">blob_ellipse</a></div></div>
+  </div>
+
+  <div class="two">
+    <div class="box">
+      <h3>Match a known answer</h3>
+      <ul>
+        <li><b>The 2008 MATLAB code:</b> <a href="https://github.com/fairyflies9/pyIBM/tree/main/examples/heaving_plate_2008">heaving_plate_2008</a>, the plate my old code pushed through syrup, matched to round-off.</li>
+        <li><b>Exact solutions:</b> the decaying Taylor&ndash;Green vortex (<a href="https://github.com/fairyflies9/pyIBM/tree/main/examples/taylor_green">taylor_green</a>), Stokes' oscillating wall (<a href="https://github.com/fairyflies9/pyIBM/tree/main/examples/stokes_second_problem">stokes_second_problem</a>), and oscillating flow in a channel (<a href="https://github.com/fairyflies9/pyIBM/tree/main/examples/womersley_channel">womersley_channel</a>).</li>
+        <li><b>Published computations, closely:</b> the lid-driven cavity of Ghia, Ghia &amp; Shin (1982) (<a href="https://github.com/fairyflies9/pyIBM/tree/main/examples/lid_driven_cavity">lid_driven_cavity</a>), the flapping plate, and the ringing ellipse.</li>
+      </ul>
+    </div>
+    <div class="box">
+      <h3>Agree in part</h3>
+      <ul>
+        <li>The cylinder wake and clap and fling, above.</li>
+        <li>A flag in a stream after Huang, Shin &amp; Sung (2007): it flaps at their period to 1&nbsp;%, but its amplitude has not converged (<a href="https://github.com/fairyflies9/pyIBM/tree/main/examples/flapping_filament">flapping_filament</a>).</li>
+        <li>A jellyfish bell after Hoover &amp; Miller (2015): it rings at close to the paper's natural frequency (we tuned its stiffness to it), but it does not swim at this resolution (<a href="https://github.com/fairyflies9/pyIBM/tree/main/examples/jellyfish_bell">jellyfish_bell</a>).</li>
+        <li>Valveless pumping after Jung &amp; Peskin (2001): the net flow goes the paper's way at all three pumping periods, with magnitudes within 40&nbsp;% (<a href="https://github.com/fairyflies9/pyIBM/tree/main/examples/heart_tube">heart_tube</a>).</li>
+        <li>The forced circle of Fovargue (2012): only the trend of the error with the time step, since the membrane model and stiffnesses are our own (<a href="https://github.com/fairyflies9/pyIBM/tree/main/examples/forced_circle">forced_circle</a>).</li>
+      </ul>
+      <h3 style="margin-top:16px">Demonstrations</h3>
+      <ul>
+        <li>A swimming filament (<a href="https://github.com/fairyflies9/pyIBM/tree/main/examples/swimmer">swimmer</a>), an elastic ring falling in a box (<a href="https://github.com/fairyflies9/pyIBM/tree/main/examples/sedimenting_ring">sedimenting_ring</a>), and a rubber band relaxing to a circle (<a href="https://github.com/fairyflies9/pyIBM/tree/main/examples/rubberband">rubberband</a>).</li>
+      </ul>
+    </div>
+  </div>
+  <p class="note">The table in <a href="https://github.com/fairyflies9/pyIBM/blob/main/docs/examples.md">docs/examples.md</a> has every example with its reference, how well it agrees, and how long it takes to run.</p>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Tutorials</h2>
+  <p class="lead">Jupyter notebooks that take the equations of a source paper in order, name the pyIBM function behind each one, and run it. They are written for people who know some fluid mechanics and numerical methods, and each one runs in well under three minutes on a laptop.</p>
+  <div class="cards">
+    <div class="card"><div class="body"><div class="kicker">01</div><h3>Peskin &amp; McQueen (1996), step by step</h3><p>The periodic immersed boundary method and the midpoint scheme of Peskin (2002), ending with my 2008 heaving plate reproduced to round-off.</p><a class="more" href="https://github.com/fairyflies9/pyIBM/tree/main/tutorials/01_peskin_mcqueen_1996_immersed_boundary.ipynb">Open the notebook</a></div></div>
+    <div class="card"><div class="body"><div class="kicker">02</div><h3>The projection method on a staggered grid</h3><p>The projection method after Seibold's notes, with walls, inflow, and outflow that change in time, and an immersed boundary in a channel.</p><a class="more" href="https://github.com/fairyflies9/pyIBM/tree/main/tutorials/02_projection_method_mac_dirichlet.ipynb">Open the notebook</a></div></div>
+    <div class="card"><div class="body"><div class="kicker">03</div><h3>The blob projection method</h3><p>The blob forces and projection of Cortez &amp; Minion (2000), and how they compare with spreading forces by a delta function on one elastic ring.</p><a class="more" href="https://github.com/fairyflies9/pyIBM/tree/main/tutorials/03_blob_projection_method.ipynb">Open the notebook</a></div></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="two">
+    <div class="box">
+      <h3>Where it came from</h3>
+      <p>pyIBM started from my 2008 MATLAB code, which pushed a flat plate sideways through a very viscous fluid with the first-order periodic scheme in section 14 of Peskin &amp; McQueen (1996). That code is kept unchanged in the repository, and pyIBM matches it to round-off.</p>
+      <p>From there we added the second-order midpoint scheme of Peskin (2002), a projection solver with walls after Seibold's notes for MIT 18.086 (2008), the blob projection method of Cortez &amp; Minion (2000), and the forced-circle test from Lauren Fovargue's 2012 PhD thesis at UNC Chapel Hill. The input files follow IB2d (Battista, Strickland &amp; Miller 2017).</p>
+    </div>
+    <div class="box">
+      <h3>Coming next</h3>
+      <ul>
+        <li>Finer runs of the examples that agree only in part, starting with the cylinder wake, the flag, and the jellyfish bell.</li>
+        <li>The blob projection method in a box with walls. Today it needs the periodic box.</li>
+      </ul>
+    </div>
+  </div>
+  <p class="note">pyIBM needs Python 3.11 or later, NumPy, SciPy, and Matplotlib. Clone the repository and run <code>pip install -e .</code> to install it. Developed by Laura A. Miller. MIT License.</p>
+</div></section>
+
+</main>
+<footer><div class="wrap">
+  <div>
+    <b>Laura Miller</b>
+    Department of Mathematics, University of Arizona<br>
+    617 N. Santa Rita Ave., P.O. Box 210089, <span class="nowrap">Tucson, AZ 85721-0089</span><br>
+    <a href="mailto:lauram9@arizona.edu">lauram9@arizona.edu</a>
+    <div class="small">Horses, lessons, and EquiPhysics events: <a href="mailto:laura_miller@equiphysics.org">laura_miller@equiphysics.org</a></div>
+  </div>
+  <div>
+    <b>Elsewhere</b>
+    <ul>
+      <li><a href="https://scholar.google.com/citations?user=zrKC-PcAAAAJ&amp;hl=en">Google Scholar</a></li>
+      <li><a href="https://orcid.org/0000-0003-3707-9798">ORCID</a></li>
+      <li><a href="https://github.com/fairyflies9">GitHub</a></li>
+      <li><a href="https://www.linkedin.com/in/laura-miller-equiphysics/">LinkedIn</a></li>
+      <li><a href="cv/Laura_Miller_CV.pdf">CV (PDF)</a></li>
+    </ul>
+  </div>
+  <div>
+    <b>Horses</b>
+    <ul>
+      <li><a href="horses.html">From AMEC to Rancho del Nido</a></li>
+      <li><a href="https://www.equiphysics.org">EquiPhysics</a></li>
+      <li><a href="https://equiphysics.github.io/">Free tools and lessons</a></li>
+      <li><a href="https://equiphysics.github.io/web-apps/">Horse Gait Lab</a> · <a href="https://equiphysics.github.io/web-apps/heart/">Horse Heart Lab</a></li>
+    </ul>
+    <div class="small">Updated October 2026.</div>
+    <button class="theme-btn" type="button" id="themeBtn">Light / dark</button>
+  </div>
+</div></footer>
+<script>
+(function(){var b=document.getElementById('themeBtn');if(!b)return;b.addEventListener('click',function(){
+var r=document.documentElement,cur=r.getAttribute('data-theme');
+if(!cur){cur=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}
+var next=cur==='dark'?'light':'dark';r.setAttribute('data-theme',next);try{localStorage.setItem('theme',next)}catch(e){}});})();
+</script>
+</body>
+</html>
